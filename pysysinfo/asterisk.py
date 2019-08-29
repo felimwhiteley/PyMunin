@@ -213,7 +213,7 @@ class AsteriskInfo:
         else:
             cmd = "show version"
         cmdresp = self.executeCommand(cmd)
-        mobj = re.match('Asterisk\s*(SVN-branch-|\s)(\d+(\.\d+)*)', cmdresp)
+        mobj = re.match('Asterisk\s*(certified/|SVN-branch-|\s)(\d+(\.\d+)*)', cmdresp)
         if mobj:
             self._asterisk_version = util.SoftwareVersion(mobj.group(2))
         else:
